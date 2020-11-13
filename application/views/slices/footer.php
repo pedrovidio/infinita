@@ -13,7 +13,8 @@
       }
     });
   });
-  $('.btn-success-corretor').click(function(){
+
+  function listCorretores(){
     $('.corretor').remove();
     $.ajax({
       url: "<?= base_url('listCorretores') ?>",
@@ -23,7 +24,7 @@
         $('#corretores_vinculados').append(options);
       }
     });
-  });
+  }
 
   function myFunction() {
     var checkBox = document.getElementById("Possui_corretor_outra");
@@ -36,6 +37,23 @@
       text.style.display = "none";
       document.getElementById("Corretor_Imobiliaria_Outra").required = false;
     }
+  }
+
+  function submitCorretor() {
+    const Corretor_Nome = document.getElementById('Corretor_Nome').value;
+    const Corretor_Telefone = document.getElementById('Corretor_Telefone').value;
+    const Corretor_Email = document.getElementById('Corretor_Email').value;
+    const Corretor_Imobiliaria = $('input[name=Corretor_Imobiliaria]:checked', '#corretorForm').val()
+    const Corretor_Imobiliaria_Outra = document.getElementById('Corretor_Imobiliaria_Outra').value;
+    $.ajax({
+				method: "POST",
+				data:{Corretor_Nome: Corretor_Nome, Corretor_Telefone: Corretor_Telefone, Corretor_Email: Corretor_Email, Corretor_Imobiliaria: Corretor_Imobiliaria, Corretor_Imobiliaria_Outra: Corretor_Imobiliaria_Outra},
+				url: "<?php echo base_url('corretorCreate') ?>",
+				success: function(result){
+          listCorretores();
+          $('#modalCorretor').modal('hide');
+				}
+			});
   }
 </script>
 </body>

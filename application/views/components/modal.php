@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-      <form method="post" action="<?= base_url('corretorCreate')?>" class="mb-3" enctype="multipart/form-data">
+      <form class="mb-3" id='corretorForm' enctype="multipart/form-data">
         <div class="form-group">
           <label for="Corretor_Nome">Nome do corretor:</label>
           <input class="form-control" type="text" id="Corretor_Nome" name="Corretor_Nome" required>
@@ -24,61 +24,61 @@
         <div class="form-group">
           <p>Imobiliária:</p>
           <div class="form-check form-check">
-            <input class="form-check-input" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_autonomo" value="Autônomo" onclick="myFunction()" required>
+            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_autonomo" value="Autônomo" onclick="myFunction()" required>
             <label class="form-check-label" for="Possui_corretor_autonomo">
               Autônomo
             </label>
           </div>
           <div class="form-check form-check">
-            <input class="form-check-input" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_aux_predial" value="Auxiliadora Predial" onclick="myFunction()" required>
+            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_aux_predial" value="Auxiliadora Predial" onclick="myFunction()" required>
             <label class="form-check-label" for="Possui_corretor_aux_predial">
               Auxiliadora Predial
             </label>
           </div>
           <div class="form-check form-check">
-            <input class="form-check-input" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_guarida_imoveis" value="Guarida Imóveis" onclick="myFunction()" required>
+            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_guarida_imoveis" value="Guarida Imóveis" onclick="myFunction()" required>
             <label class="form-check-label" for="Possui_corretor_guarida_imoveis">
               Guarida Imóveis
             </label>
           </div>
           <div class="form-check form-check">
-            <input class="form-check-input" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_foxter_imobiliaria" value="Foxter Imobiliária" onclick="myFunction()" required>
+            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_foxter_imobiliaria" value="Foxter Imobiliária" onclick="myFunction()" required>
             <label class="form-check-label" for="Possui_corretor_foxter_imobiliaria">
               Foxter Imobiliária
             </label>
           </div>
           <div class="form-check form-check">
-            <input class="form-check-input" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_lopes" value="Lopes" onclick="myFunction()" required>
+            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_lopes" value="Lopes" onclick="myFunction()" required>
             <label class="form-check-label" for="Possui_corretor_lopes">
               Lopes
             </label>
           </div>
           <div class="form-check form-check">
-            <input class="form-check-input" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_imobiliaria_ducati" value="Imobiliária Ducati" onclick="myFunction()" required>
+            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_imobiliaria_ducati" value="Imobiliária Ducati" onclick="myFunction()" required>
             <label class="form-check-label" for="Possui_corretor_imobiliaria_ducati">
               Imobiliária Ducati
             </label>
           </div>
           <div class="form-check form-check">
-            <input class="form-check-input" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_credito_real" value="Crédito Real" onclick="myFunction()" required>
+            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_credito_real" value="Crédito Real" onclick="myFunction()" required>
             <label class="form-check-label" for="Possui_corretor_credito_real">
               Crédito Real
             </label>
           </div>
           <div class="form-check form-check">
-            <input class="form-check-input" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_vera_bernardes" value="Vera Bernardes" onclick="myFunction()" required>
+            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_vera_bernardes" value="Vera Bernardes" onclick="myFunction()" required>
             <label class="form-check-label" for="Possui_corretor_vera_bernardes">
               Vera Bernardes
             </label>
           </div>
           <div class="form-check form-check">
-            <input class="form-check-input" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_iper_imoveis" value="Iper Imóveis" onclick="myFunction()" required>
+            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_iper_imoveis" value="Iper Imóveis" onclick="myFunction()" required>
             <label class="form-check-label" for="Possui_corretor_iper_imoveis">
               Iper Imóveis
             </label>
           </div>
           <div class="form-check form-check">
-            <input class="form-check-input" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_outra" value="Outra" onclick="myFunction()" required>
+            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_outra" value="Outra" onclick="myFunction()" required>
             <label class="form-check-label" for="Possui_corretor_outra">
               Outra
             </label>
@@ -92,7 +92,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-success btn-success-corretor">Cadastrar</button>
+        <button type="button" onclick="submitCorretor()" class="btn btn-success btn-success-corretor">Cadastrar</button>
       </form>
       </div>
     </div>
