@@ -1,0 +1,1 @@
+<?php if(!empty($msg)){ echo "<div id='msg_import' class='shadow rounded $class'>$msg</div>";} ?>
