@@ -11,7 +11,7 @@ class LeadCreate extends CI_Controller {
     public function index() {
       $data = $this->input->post();
       
-      $id = $this->lead->add($data);
+      $this->lead->add($data);
 
       redirect(base_url('home/index/ok/Lead'));
     }

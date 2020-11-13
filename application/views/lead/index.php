@@ -77,7 +77,6 @@
           </button>
         </div>
       </div>
-      <input type="hidden" name="form" id="form" value="lead">
       <button type="submit" class="btn btn-success mb-3">Cadastrar</button>
     </form>
   </div>

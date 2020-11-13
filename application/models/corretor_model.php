@@ -8,7 +8,7 @@ class Corretor_model extends CI_Model {
 		parent::__construct();
 	}
 
-	public function all($data) {
+	public function all() {
 		$this->db->select('Corretor_Nome, id');
 		$data = $this->db->get($this->table)->result_array();
 		return $data;

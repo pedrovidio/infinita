@@ -11,11 +11,11 @@ class ListCorretores extends CI_Controller {
     public function index() {
       $corretores = $this->corretor->all();
 
-      $options = "<option></option>";
+      $options = "<option class='corretor'></option>";
       foreach($corretores as $id => $corretor){
-        $options .= "<option value='".$id."'>$corretor</option>";
+        $options .= "<option class='corretor' value='".$corretor['id']."'>".$corretor['Corretor_Nome']."</option>";
       }
 
-      return $corretores;
+      echo $options;
     }
   }
