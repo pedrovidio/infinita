@@ -30,7 +30,7 @@
   }
 
   function myFunction() {
-    var checkBox = document.getElementById("Possui_corretor_outra");
+    var checkBox = document.getElementById("Possui_corretor_Outra");
     var text = document.getElementById("Qoutra");
 
     if (checkBox.checked == true){

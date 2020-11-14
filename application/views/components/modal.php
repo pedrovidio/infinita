@@ -23,66 +23,58 @@
         </div>
         <div class="form-group">
           <p>Imobiliária:</p>
-          <div class="form-check form-check">
-            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_autonomo" value="Autônomo" onclick="myFunction()" required>
-            <label class="form-check-label" for="Possui_corretor_autonomo">
-              Autônomo
-            </label>
-          </div>
-          <div class="form-check form-check">
-            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_aux_predial" value="Auxiliadora Predial" onclick="myFunction()" required>
-            <label class="form-check-label" for="Possui_corretor_aux_predial">
-              Auxiliadora Predial
-            </label>
-          </div>
-          <div class="form-check form-check">
-            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_guarida_imoveis" value="Guarida Imóveis" onclick="myFunction()" required>
-            <label class="form-check-label" for="Possui_corretor_guarida_imoveis">
-              Guarida Imóveis
-            </label>
-          </div>
-          <div class="form-check form-check">
-            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_foxter_imobiliaria" value="Foxter Imobiliária" onclick="myFunction()" required>
-            <label class="form-check-label" for="Possui_corretor_foxter_imobiliaria">
-              Foxter Imobiliária
-            </label>
-          </div>
-          <div class="form-check form-check">
-            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_lopes" value="Lopes" onclick="myFunction()" required>
-            <label class="form-check-label" for="Possui_corretor_lopes">
-              Lopes
-            </label>
-          </div>
-          <div class="form-check form-check">
-            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_imobiliaria_ducati" value="Imobiliária Ducati" onclick="myFunction()" required>
-            <label class="form-check-label" for="Possui_corretor_imobiliaria_ducati">
-              Imobiliária Ducati
-            </label>
-          </div>
-          <div class="form-check form-check">
-            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_credito_real" value="Crédito Real" onclick="myFunction()" required>
-            <label class="form-check-label" for="Possui_corretor_credito_real">
-              Crédito Real
-            </label>
-          </div>
-          <div class="form-check form-check">
-            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_vera_bernardes" value="Vera Bernardes" onclick="myFunction()" required>
-            <label class="form-check-label" for="Possui_corretor_vera_bernardes">
-              Vera Bernardes
-            </label>
-          </div>
-          <div class="form-check form-check">
-            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_iper_imoveis" value="Iper Imóveis" onclick="myFunction()" required>
-            <label class="form-check-label" for="Possui_corretor_iper_imoveis">
-              Iper Imóveis
-            </label>
-          </div>
-          <div class="form-check form-check">
-            <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_outra" value="Outra" onclick="myFunction()" required>
-            <label class="form-check-label" for="Possui_corretor_outra">
-              Outra
-            </label>
-          </div>
+          <?php
+          $imobiliarias = array(
+            1 => 'AJ Cândido',
+            2 => 'Autônomo',
+            3 => 'Auxiliadora Predial',
+            4 => 'Crédito Real',
+            5 => 'Da Cás',
+            6 => 'Foxter Imobiliária',
+            7 => 'Guarida Imóveis',
+            8 => 'Imobiliária Ducati',
+            9 => 'Iper Imóveis',
+            10 => 'Jbarcelos',
+            11 => 'Lopes',
+            12 => 'Urban',
+            13 => 'Vera Bernardes',
+            14 => 'Outra'
+          );
+          $map = array(
+            'á' => 'a',
+            'à' => 'a',
+            'ã' => 'a',
+            'â' => 'a',
+            'é' => 'e',
+            'ê' => 'e',
+            'í' => 'i',
+            'ó' => 'o',
+            'ô' => 'o',
+            'õ' => 'o',
+            'ú' => 'u',
+            'ü' => 'u',
+            'ç' => 'c',
+            'Á' => 'A',
+            'À' => 'A',
+            'Ã' => 'A',
+            'Â' => 'A',
+            'É' => 'E',
+            'Ê' => 'E',
+            'Í' => 'I',
+            'Ó' => 'O',
+            'Ô' => 'O',
+            'Õ' => 'O',
+            'Ú' => 'U',
+            'Ü' => 'U',
+            'Ç' => 'C'
+        );
+          foreach ($imobiliarias as $key => $imobiliaria) {
+            echo '<div class="form-check form-check">
+                    <input class="form-check-input CorretorImob" type="radio" name="Corretor_Imobiliaria" id="Possui_corretor_'.strtr(str_replace(' ','',$imobiliaria),$map).'" value="'.$imobiliaria.'" onclick="myFunction()" required>
+                    <label class="form-check-label" for="Possui_corretor_'.strtr(str_replace(' ','',$imobiliaria),$map).'">'.$imobiliaria.'</label>
+                  </div>';
+          }
+          ?>
           <div class="form-group row" id="Qoutra" style="display:none">
             <label for="Corretor_Imobiliaria_Outra" class="col-sm-2 col-form-label">Qual?</label>
             <div class="col-sm-10">
