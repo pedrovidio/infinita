@@ -51,6 +51,7 @@
 				url: "<?php echo base_url('corretorCreate') ?>",
 				success: function(result){
           listCorretores();
+          $("#corretorForm").trigger('reset'); 
           $('#modalCorretor').modal('hide');
 				}
 			});
