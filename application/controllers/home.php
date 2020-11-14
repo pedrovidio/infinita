@@ -16,11 +16,16 @@ class Home extends CI_Controller {
         $msg['class'] = "success";
       }
 
+      if($action === "error" AND $actor === "login"){
+        $msg['msg'] = "Usuário/senha incorreto";
+        $msg['class'] = "danger";
+      }
+
       $headers['headers'] = ['style', 'landing','toast'];
       $this->load->view('slices/header', $headers);
-      $this->load->view('components/modal.php');
+      $this->load->view('components/modal_login.php');
       $this->load->view('components/toast.php',$msg);
       $this->load->view('home/index.php');
-      $this->load->view('slices/footer');
+      $this->load->view('home/footer');
     }
   }

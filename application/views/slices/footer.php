@@ -23,7 +23,6 @@
       url: "<?= base_url('listCorretores') ?>",
       success: function(result){
         var options = result;
-        console.log(options)
         $('#corretores_vinculados').append(options);
       }
     });

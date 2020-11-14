@@ -28,3 +28,10 @@ html{
   background-color: #ce5876!important;
   border-color: #ce5876!important;
 }
+.card-link{
+  font-size: 1rem;
+  color:#EA6487!important;
+}
+.card-link:hover{
+  color: #ce5876!important;
+}
