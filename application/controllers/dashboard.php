@@ -4,9 +4,11 @@ class Dashboard extends CI_Controller {
 
     public function __construct(){
 
-    parent::__construct();
-      if(!$this->session->id_login){
-        redirect(base_url("home"));
+      parent::__construct();
+      $this->load->library('session');
+
+      if(!$this->session->userdata('idLogin')){
+        redirect(base_url('home'));
       }
     }
 

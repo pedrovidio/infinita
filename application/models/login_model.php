@@ -12,6 +12,6 @@ class Login_model extends CI_Model {
 		$this->db->select('id');
 		$this->db->where($data);
 		$data = $this->db->get($this->table)->result_array();
-		return $data;
+		return $data[0]['id'];
   }
 }
