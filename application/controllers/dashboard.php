@@ -26,12 +26,13 @@ class Dashboard extends CI_Controller {
         '6' => 'Lead_BairroComerc',
         '7' => 'Lead_CidadeComerc',
         '8' => 'Autorizacao',
-        '9' => 'Corretor_Nome',
-        '10' => 'Corretor_Telefone',
-        '11' => 'Corretor_Email',
-        '12' => 'Corretor_Imobiliaria',
-        '13' => 'Corretor_Imobiliaria_Outra',
-        '14' => 'dt_cadastro',
+        '9' => 'Possui_corretor',
+        '10' => 'Corretor_Nome',
+        '11' => 'Corretor_Telefone',
+        '12' => 'Corretor_Email',
+        '13' => 'Corretor_Imobiliaria',
+        '14' => 'Corretor_Imobiliaria_Outra',
+        '15' => 'dt_cadastro',
       );
       $data['labels'] = array(
         '1' => 'Nome do lead',
@@ -42,12 +43,13 @@ class Dashboard extends CI_Controller {
         '6' => 'Bairro Comercial',
         '7' => 'Cidade Comercial',
         '8' => 'Autorização',
-        '9' => 'Nome do corretor',
-        '10' => 'Telefone do corretor',
-        '11' => 'Email do corretor',
-        '12' => 'Imobiliária do corretor',
-        '13' => 'Imobiliária do corretor (Outra)',
-        '14' => 'Data de cadastro',
+        '9' => 'Possui corretor',
+        '10' => 'Nome do corretor',
+        '11' => 'Telefone do corretor',
+        '12' => 'Email do corretor',
+        '13' => 'Imobiliária do corretor',
+        '14' => 'Imobiliária do corretor (Outra)',
+        '15' => 'Data de cadastro',
       );
       $data['largura'] = array(
         '1' => '150px',
@@ -61,9 +63,10 @@ class Dashboard extends CI_Controller {
         '9' => '170px',
         '10' => '170px',
         '11' => '170px',
-        '12' => '200px',
-        '13' => '250px',
-        '14' => '150px'
+        '12' => '170px',
+        '13' => '200px',
+        '14' => '250px',
+        '15' => '150px'
       );
       $this->load->view('dashboard/header', $headers);
       $this->load->view('dashboard/navbar.php');
@@ -75,6 +78,7 @@ class Dashboard extends CI_Controller {
     public function corretor() {
       $headers['headers'] = ['style', 'search_table'];
       $data['cadastros'] = $this->corretor->allTabela();
+      var_dump($data);die;
       $data['colunas'] = array(
         '1' => 'Corretor_Nome',
         '2' => 'Corretor_Telefone',
