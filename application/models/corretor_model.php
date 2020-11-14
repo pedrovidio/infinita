@@ -10,6 +10,7 @@ class Corretor_model extends CI_Model {
 
 	public function all() {
 		$this->db->select('Corretor_Nome,Corretor_Email, id');
+		$this->db->order_by('Corretor_Nome', 'ASC');
 		$data = $this->db->get($this->table)->result_array();
 		return $data;
 		
