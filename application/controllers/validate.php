@@ -11,19 +11,24 @@ class Validate extends CI_Controller {
   
   public function index() {
 
-      $data = $this->input->post();
+    $data = $this->input->post();
 
-      $id = $this->login->valida($data);
+    $id = $this->login->valida($data);
 
-      if(!empty($id))
-      {
-        $dados = array(
-          'idLogin'  => $id,
-        );
-        
-        $this->session->set_userdata($dados);
-        redirect(base_url("dashboard"));
-      }
-      redirect(base_url('home/index/error/login'));
+    if(!empty($id))
+    {
+      $dados = array(
+        'idLogin'  => $id,
+      );
+      
+      $this->session->set_userdata($dados);
+      redirect(base_url("dashboard"));
     }
+    redirect(base_url('home/index/error/login'));
   }
+
+    public function sair() {
+      $this->session->sess_destroy();
+      redirect(base_url('home'));
+  }
+}

@@ -18,7 +18,7 @@
           <div class="form-group row">
             <label for="pass" class="col-sm-3 col-form-label">Senha:</label>
             <div class="col-sm-9">
-              <input class="form-control" type="text" id="pass" name="pass" required>
+              <input class="form-control" type="password" id="pass" name="pass" required>
             </div>
           </div>
       </div>

@@ -8,6 +8,13 @@ class Lead_model extends CI_Model {
 		parent::__construct();
 	}
 
+	public function allTabela() {
+		$this->db->select('*');
+		$this->db->join('corretor', 'corretor.id = lead.id_corretor');
+		$data = $this->db->get($this->table)->result_array();
+		return $data;
+  }
+
 	public function add($data) {
     $this->db->insert($this->table, $data);
     return $this->db->insert_id();

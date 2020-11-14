@@ -13,10 +13,12 @@ class Corretor_model extends CI_Model {
 		$this->db->order_by('Corretor_Nome', 'ASC');
 		$data = $this->db->get($this->table)->result_array();
 		return $data;
-		
-		
-		$this->db->insert($this->table, $data);
-    return $this->db->insert_id();
+	}
+	
+	public function allTabela() {
+		$this->db->select('*');
+		$data = $this->db->get($this->table)->result_array();
+		return $data;
   }
 
 	public function add($data) {
