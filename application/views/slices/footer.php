@@ -14,9 +14,12 @@
     });
   });
 
-  function listCorretores(){
+  function listCorretores(Corretor_Nome,Corretor_Email){
+    console.log(Corretor_Nome,Corretor_Email);
     $('.corretor').remove();
     $.ajax({
+      method: "POST",
+      data:{Corretor_Nome: Corretor_Nome, Corretor_Email: Corretor_Email},
       url: "<?= base_url('listCorretores') ?>",
       success: function(result){
         var options = result;
@@ -50,7 +53,7 @@
 				data:{Corretor_Nome: Corretor_Nome, Corretor_Telefone: Corretor_Telefone, Corretor_Email: Corretor_Email, Corretor_Imobiliaria: Corretor_Imobiliaria, Corretor_Imobiliaria_Outra: Corretor_Imobiliaria_Outra},
 				url: "<?php echo base_url('corretorCreate') ?>",
 				success: function(result){
-          listCorretores();
+          listCorretores(Corretor_Nome,Corretor_Email);
           $("#corretorForm").trigger('reset'); 
           $('#modalCorretor').modal('hide');
 				}

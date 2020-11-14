@@ -9,7 +9,7 @@ class Corretor_model extends CI_Model {
 	}
 
 	public function all() {
-		$this->db->select('Corretor_Nome, id');
+		$this->db->select('Corretor_Nome,Corretor_Email, id');
 		$data = $this->db->get($this->table)->result_array();
 		return $data;
 		
