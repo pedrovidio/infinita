@@ -78,7 +78,6 @@ class Dashboard extends CI_Controller {
     public function corretor() {
       $headers['headers'] = ['style', 'search_table'];
       $data['cadastros'] = $this->corretor->allTabela();
-      var_dump($data);die;
       $data['colunas'] = array(
         '1' => 'Corretor_Nome',
         '2' => 'Corretor_Telefone',
